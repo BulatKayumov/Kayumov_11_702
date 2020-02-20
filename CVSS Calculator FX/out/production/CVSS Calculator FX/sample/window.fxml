@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Label fx:id="chooseButtonLabel" alignment="CENTER" layoutX="100.0" layoutY="100.0" prefHeight="100.0" prefWidth="400.0" text="Choose CVSS version" textAlignment="CENTER">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <HBox fx:id="versionButtons" alignment="CENTER" layoutX="50.0" layoutY="250.0" prefHeight="100.0" prefWidth="500.0" spacing="40.0">
+         <children>
+            <Button fx:id="CVSSv2Button" mnemonicParsing="false" prefHeight="59.0" prefWidth="174.0" text="CVSS v2">
+               <font>
+                  <Font size="30.0" />
+               </font></Button>
+            <Button fx:id="CVSSv3Button" layoutX="173.0" layoutY="31.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="174.0" text="CVSS v3">
+               <font>
+                  <Font size="30.0" />
+               </font></Button>
+         </children></HBox>
+      <AnchorPane fx:id="anchorPane" prefHeight="469.0" prefWidth="606.0" visible="false">
+         <children>
+            <HBox fx:id="scoresHBox" layoutX="100.0" layoutY="50.0" prefHeight="400.0" prefWidth="400.0" visible="false">
+               <children>
+                  <VBox prefHeight="400.0" prefWidth="206.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="215.0" text="Base Score" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="215.0" text="Impact Subscore" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="215.0" text="Exploitability Subscore" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="50.0" prefWidth="215.0" text="Temporal Score" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="50.0" prefWidth="215.0" text="Environmental Score" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="50.0" prefWidth="215.0" text="Modified Impact Subscore" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="50.0" prefWidth="215.0" text="Overall Score" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="206.0">
+                     <children>
+                        <Label fx:id="basicScoreLabel" alignment="CENTER" prefHeight="50.0" prefWidth="215.0" text="NA" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="impactSubcoreLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="215.0" text="NA" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="exploitabilitySubcoreLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="215.0" text="NA" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="temporalScoreLabel" alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="50.0" prefWidth="215.0" text="NA" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="environmentalScoreLabel" alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="50.0" prefWidth="215.0" text="NA" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="modifiedSubscoreLabel" alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="50.0" prefWidth="215.0" text="NA" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="overallScoreLabel" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="50.0" prefWidth="215.0" text="NA" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label fx:id="scoreMetricsLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="20.0" prefHeight="31.0" prefWidth="340.0" text="Basic Score Metrics" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font name="Calibri" size="26.0" />
+               </font>
+            </Label>
+            <HBox fx:id="basicScoreMetricsHBox" alignment="TOP_CENTER" layoutX="50.0" layoutY="70.0" prefHeight="330.0" prefWidth="500.0" spacing="50.0" visible="false">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label text="Exploitability Metrics" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="TOP_CENTER" prefHeight="197.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Attack Vector (AV)" />
+                              <ChoiceBox fx:id="AV" prefWidth="150.0" />
+                              <Label text="Access Complexity (AC)" />
+                              <ChoiceBox fx:id="AC" prefWidth="150.0" />
+                              <Label text="Authentication (Au)" />
+                              <ChoiceBox fx:id="Au" prefWidth="150.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label text="Impact Metrics" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="TOP_CENTER" prefHeight="197.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Confidentiality Impact (C)" />
+                              <ChoiceBox fx:id="C" prefWidth="150.0" />
+                              <Label text="Integrity Impact (I)" />
+                              <ChoiceBox fx:id="I" prefWidth="150.0" />
+                              <Label text="Availability Impact (A)" />
+                              <ChoiceBox fx:id="A" prefWidth="150.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox fx:id="temporalScoreMetricsHBox" alignment="TOP_CENTER" layoutX="50.0" layoutY="70.0" prefHeight="330.0" prefWidth="500.0" visible="false">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="175.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Exploitability (E)" />
+                        <ChoiceBox fx:id="E" prefWidth="150.0" />
+                        <Label text="Remediation Level (RL)" />
+                        <ChoiceBox fx:id="RL" prefWidth="150.0" />
+                        <Label text="Report Confidence (RC)" />
+                        <ChoiceBox fx:id="RC" prefWidth="150.0" />
+                     </children>
+                     <padding>
+                        <Insets top="53.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox fx:id="environmentalScoreMetricsHBox" alignment="TOP_CENTER" layoutX="50.0" layoutY="70.0" prefHeight="330.0" prefWidth="500.0" spacing="50.0" visible="false">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="245.0" prefWidth="248.0" spacing="30.0">
+                     <children>
+                        <Label text="General Modifiers" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="TOP_CENTER" prefHeight="197.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Collateral Damage Potential (CDP)" />
+                              <ChoiceBox fx:id="CDP" prefWidth="150.0" />
+                              <Label text="Target Distribution (TD)" />
+                              <ChoiceBox fx:id="TD" prefWidth="150.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="245.0" prefWidth="239.0" spacing="30.0">
+                     <children>
+                        <Label text="Impact Subscore Modifiers" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="TOP_CENTER" prefHeight="197.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Confidentiality Requirement (CR)" />
+                              <ChoiceBox fx:id="CR" prefWidth="150.0" />
+                              <Label text="Integrity Requirement (IR)" />
+                              <ChoiceBox fx:id="IR" prefWidth="150.0" />
+                              <Label text="Availability Requirement (AR)" />
+                              <ChoiceBox fx:id="AR" prefWidth="150.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox fx:id="basicScoreMetrics3HBox" alignment="TOP_CENTER" layoutX="50.0" layoutY="70.0" prefHeight="330.0" prefWidth="500.0" spacing="50.0" visible="false">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label text="Exploitability Metrics" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="TOP_CENTER" prefHeight="197.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Attack Vector (AV)" />
+                              <ChoiceBox fx:id="AV3" prefWidth="150.0" />
+                              <Label text="Access Complexity (AC)" />
+                              <ChoiceBox fx:id="AC3" prefWidth="150.0" />
+                              <Label text="Privileges Required (PR)" />
+                              <ChoiceBox fx:id="PR3" prefWidth="150.0" />
+                              <Label layoutX="46.0" layoutY="114.0" text="User Interaction (UI)" />
+                              <ChoiceBox fx:id="UI3" layoutX="35.0" layoutY="135.0" prefWidth="150.0" />
+                              <Label layoutX="46.0" layoutY="166.0" text="Scope (S)" />
+                              <ChoiceBox fx:id="S3" layoutX="35.0" layoutY="187.0" prefWidth="150.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label text="Impact Metrics" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="TOP_CENTER" prefHeight="197.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Confidentiality Impact (C)" />
+                              <ChoiceBox fx:id="C3" prefWidth="150.0" />
+                              <Label text="Integrity Impact (I)" />
+                              <ChoiceBox fx:id="I3" prefWidth="150.0" />
+                              <Label text="Availability Impact (A)" />
+                              <ChoiceBox fx:id="A3" prefWidth="150.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox fx:id="temporalScoreMetrics3HBox" alignment="TOP_CENTER" layoutX="50.0" layoutY="70.0" prefHeight="330.0" prefWidth="500.0" visible="false">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="175.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Exploitability (E)" />
+                        <ChoiceBox fx:id="E3" prefWidth="150.0" />
+                        <Label text="Remediation Level (RL)" />
+                        <ChoiceBox fx:id="RL3" prefWidth="150.0" />
+                        <Label text="Report Confidence (RC)" />
+                        <ChoiceBox fx:id="RC3" prefWidth="150.0" />
+                     </children>
+                     <padding>
+                        <Insets top="53.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox fx:id="environmentalScoreMetrics3HBox" alignment="TOP_CENTER" layoutX="20.0" layoutY="70.0" prefHeight="330.0" prefWidth="560.0" spacing="30.0" visible="false">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="330.0" prefWidth="300.0" spacing="10.0">
+                     <children>
+                        <Label prefHeight="43.0" prefWidth="165.0" text="Base Modifiers" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Calibri Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="TOP_CENTER" prefHeight="197.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Attack Vector (AV)" />
+                              <ChoiceBox fx:id="AV33" prefWidth="150.0" />
+                              <Label text="Access Complexity (AC)" />
+                              <ChoiceBox fx:id="AC33" prefWidth="150.0" />
+                              <Label text="Privileges Required (PR)" />
+                              <ChoiceBox fx:id="PR33" prefWidth="150.0" />
+                              <Label layoutX="46.0" layoutY="114.0" text="User Interaction (UI)" />
+                              <ChoiceBox fx:id="UI33" layoutX="35.0" layoutY="135.0" prefWidth="150.0" />
+                              <Label layoutX="46.0" layoutY="166.0" text="Scope (S)" />
+                              <ChoiceBox fx:id="S33" layoutX="35.0" layoutY="187.0" prefWidth="150.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="330.0" prefWidth="274.0" spacing="10.0">
+                     <children>
+                        <Label prefHeight="37.0" prefWidth="141.0" text="Impact Metrics" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Calibri Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="TOP_CENTER" prefHeight="197.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Confidentiality Impact (C)" textAlignment="CENTER" wrapText="true" />
+                              <ChoiceBox fx:id="C33" prefWidth="150.0" />
+                              <Label text="Integrity Impact (I)" />
+                              <ChoiceBox fx:id="I33" prefWidth="150.0" />
+                              <Label text="Availability Impact (A)" />
+                              <ChoiceBox fx:id="A33" prefWidth="150.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="330.0" prefWidth="327.0" spacing="10.0">
+                     <children>
+                        <Label text="Impact Subscore Modifiers" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Calibri Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="TOP_CENTER" prefHeight="197.0" prefWidth="225.0">
+                           <children>
+                              <Label text="Confidentiality Requirement (CR)" textAlignment="CENTER" wrapText="true" />
+                              <ChoiceBox fx:id="CR3" prefWidth="150.0" />
+                              <Label text="Integrity Requirement (IR)" />
+                              <ChoiceBox fx:id="IR3" prefWidth="150.0" />
+                              <Label text="Availability Requirement (AR)" />
+                              <ChoiceBox fx:id="AR3" prefWidth="150.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox fx:id="buttonsHBox" layoutX="48.0" layoutY="415.0" prefHeight="40.0" prefWidth="504.0" spacing="30.0" visible="false">
+               <children>
+                  <Button fx:id="backButton" mnemonicParsing="false" prefHeight="47.0" prefWidth="171.0" text="Back" />
+                  <Button fx:id="nextButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="171.0" text="Next" />
+                  <Button fx:id="calculateButton" layoutX="171.0" layoutY="10.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="171.0" text="Calculate" />
+               </children>
+            </HBox>
+            <Button fx:id="returnButton" layoutX="490.0" layoutY="10.0" mnemonicParsing="false" prefHeight="11.0" prefWidth="95.0" text="Return" visible="false">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Label fx:id="CVSSLabel" layoutX="20.0" layoutY="15.0" prefHeight="40.0" prefWidth="171.0" text="CVSS v2" visible="false">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+         </children>
+                 </AnchorPane>
+   </children>
+</AnchorPane>
